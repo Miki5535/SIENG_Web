@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIENG - Secure Incognito ENcryption Guard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lightbox.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="icon.png" alt="Security Icon" width="60" height="30">
+                <span>เซี้ยง</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">หน้าแรก</a>
+                <a href="#features" class="nav-link">ฟีเจอร์</a>
+                <a href="#usage" class="nav-link">การใช้งาน</a>
+                <a href="#guide" class="nav-link">คู่มือ</a>
+                <a href="#screenshots" class="nav-link">ภาพหน้าจอ</a>
+                <a href="#changelog" class="nav-link">อัปเดต</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-icon">
+                    <img src="icon.png" alt="Security Icon" width="600" height="300">
+                </div>
+                <p class="hero-subtitle">Secure Incognito ENcryption Guard</p>
+                <p class="hero-description">
+                    โปรแกรมที่ผสานเทคนิค Steganography (วิทยาการอำพรางข้อมูล) และ Cryptography (วิทยาการรหัสลับ) 
+                    เพื่อปกป้องข้อมูลอย่างปลอดภัยและไม่ถูกตรวจจับ พัฒนาด้วย PyQt5 ใช้งานง่ายผ่าน GUI
+                    รองรับ Windows
+                </p>
+                
+                <div class="download-section">
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        📦 ดาวน์โหลดโปรแกรม
+                    </button>
+                    <div class="version-info">
+                        <span class="version">v1.0.3</span>
+                        <span class="size">(15.2 MB)</span>
+                        <span class="platform">Windows</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">✨ ฟีเจอร์หลัก</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Steganography</h3>
+                    <p>ซ่อนข้อมูลลับในไฟล์สื่อต่างๆ โดยไม่ให้ผู้อื่นสังเกตเห็น รองรับเทคนิคขั้นสูง</p>
+                    <ul>
+                        <li>ไฟล์ภาพ: PNG, JPEG, BMP, GIF, TIFF</li>
+                        <li>ไฟล์เสียง: WAV, MP3, FLAC</li>
+                        <li>ไฟล์วิดีโอ: MP4, AVI, MKV, MOV</li>
+                        <li>เทคนิค: LSB, DWT, Frame-based</li>
+                        <li>ซ่อนไฟล์ลงท้ายไฟล์ภาพ (File to File)</li>
+                        <li>ซ่อนใน Metadata ของไฟล์สื่อ</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Cryptography</h3>
+                    <p>เข้ารหัสข้อมูลด้วยมาตรฐานความปลอดภัยระดับสูง รองรับหลายรูปแบบการเข้ารหัส</p>
+                    <ul>
+                        <li>AES-256: ECB, CBC, GCM</li>
+                        <li>RSA: 2048 บิต Key Exchange</li>
+                        <li>PGP/GPG: เข้ารหัสและลายเซ็นดิจิทัล</li>
+                        <li>สร้างและจัดการคู่กุญแจ</li>
+                        <li>ตรวจสอบลายเซ็นดิจิทัล</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Integration Tab</h3>
+                    <p>โหมดบูรณาการสำหรับจัดลำดับขั้นตอนการทำงานหลายขั้นตอนต่อเนื่องกัน</p>
+                    <ul>
+                        <li>ลาก-วางลำดับขั้นตอน</li>
+                        <li>เข้ารหัส → ซ่อนข้อมูล → ซ่อนซ้ำ</li>
+                        <li>จัดการ Workflow ที่ซับซ้อน</li>
+                        <li>ตั้งค่าแต่ละขั้นตอนได้</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="guide">
+        <div class="container">
+            <h2 class="section-title">📖 คู่มือการใช้งาน</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>ดาวน์โหลดไฟล์</h3>
+                        <p>คลิกปุ่ม "ดาวน์โหลดโปรแกรม" เพื่อดาวน์โหลดไฟล์ ZIP</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>แตกไฟล์ ZIP</h3>
+                        <p>คลิกขวาที่ไฟล์ ZIP และเลือก "Extract All" หรือใช้โปรแกรมแตกไฟล์</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>เรียกใช้โปรแกรม</h3>
+                        <p>ดับเบิลคลิกที่ไฟล์ "SIENG.exe" (Windows)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>เริ่มใช้งาน</h3>
+                        <p>เลือกโหมดที่ต้องการ: ซ่อนข้อมูล, แยกข้อมูล, หรือเข้ารหัส</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="usage">
+        <div class="container">
+            <h2 class="section-title">💻 วิธีการใช้งานโปรแกรม</h2>
+            
+            <div class="usage-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="steganography">การซ่อนข้อมูล</button>
+                    <button class="tab-btn" data-tab="extraction">การดึงข้อมูล</button>
+                    <button class="tab-btn" data-tab="encryption">การเข้ารหัส</button>
+                    <button class="tab-btn" data-tab="integration">Integration</button>
+                </div>
+                
+                <div class="tab-content active" id="steganography">
+                    <h3>🔒 การซ่อนข้อมูล (Steganography)</h3>
+                    <div class="usage-steps">
+                        <div class="usage-step">
+                            <div class="step-icon">📂</div>
+                            <div class="step-text">
+                                <h4>เลือก Tab ที่เหมาะสม</h4>
+                                <p><strong>Image Tab:</strong> สำหรับซ่อนในภาพ (PNG, JPEG, BMP, GIF, TIFF)</p>
+                                <p><strong>Audio Tab:</strong> สำหรับซ่อนในเสียง (WAV, MP3, FLAC)</p>
+                                <p><strong>Video Tab:</strong> สำหรับซ่อนในวิดีโอ (MP4, AVI, MKV, MOV)</p>
+                                <p><strong>FileAndFile Tab:</strong> สำหรับซ่อนไฟล์ลงท้ายไฟล์ภาพ</p>
+                                <p><strong>Meta Tag:</strong> สำหรับซ่อนใน Metadata</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">📥</div>
+                            <div class="step-text">
+                                <h4>นำเข้าไฟล์เจ้าภาพ</h4>
+                                <p>Import ไฟล์ภาพ/เสียง/วิดีโอ ที่จะใช้เป็นสื่อสำหรับซ่อนข้อมูล</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">✍️</div>
+                            <div class="step-text">
+                                <h4>ป้อนข้อมูลลับ</h4>
+                                <p>พิมพ์ข้อความลับ หรือเลือกไฟล์ลับที่ต้องการซ่อน</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">🔐</div>
+                            <div class="step-text">
+                                <h4>เข้ารหัสก่อนซ่อน (แนะนำ)</h4>
+                                <p>ใช้ฟีเจอร์การเข้ารหัสเพื่อเพิ่มความปลอดภัย</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">🎯</div>
+                            <div class="step-text">
+                                <h4>ซ่อนข้อมูล</h4>
+                                <p>คลิกปุ่ม "ซ่อน" (Hide) โปรแกรมจะใช้เทคนิค LSB, DWT หรือ Frame-based ในการซ่อนข้อมูล</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="extraction">
+                    <h3>🔍 การดึงข้อมูลที่ซ่อนไว้</h3>
+                    <div class="usage-steps">
+                        <div class="usage-step">
+                            <div class="step-icon">📂</div>
+                            <div class="step-text">
+                                <h4>เลือก Tab ที่ตรงกัน</h4>
+                                <p>เลือก Tab เดียวกับที่ใช้ซ่อนข้อมูล (Image, Audio, Video, FileAndFile, Meta)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">📥</div>
+                            <div class="step-text">
+                                <h4>นำเข้าไฟล์ที่ซ่อนข้อมูล</h4>
+                                <p>Import ไฟล์ที่มีข้อมูลซ่อนอยู่ (Stego File)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">🔍</div>
+                            <div class="step-text">
+                                <h4>ดึงข้อมูล</h4>
+                                <p>คลิกปุ่ม "ดึงข้อมูล" (Extract) โปรแกรมจะดึงข้อมูลลับออกมา</p>
+                            </div>
+                        </div>
+                        
+                        <div class="usage-step">
+                            <div class="step-icon">🔓</div>
+                            <div class="step-text">
+                                <h4>ถอดรหัส (หากจำเป็น)</h4>
+                                <p>หากข้อมูลถูกเข้ารหัสไว้ ใช้กุญแจหรือวลีผ่านเพื่อถอดรหัส</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="encryption">
+                    <h3>🔐 การเข้ารหัส/ถอดรหัสข้อมูล</h3>
+                    <div class="encryption-methods">
+                        <div class="method-card">
+                            <h4>🔹 AES-256</h4>
+                            <div class="usage-steps">
+                                <div class="usage-step">
+                                    <div class="step-icon">📝</div>
+                                    <div class="step-text">
+                                        <p>ไปที่ <strong>Encryption Tab</strong></p>
+                                        <p>ป้อนข้อความหรือเลือกไฟล์ที่ต้องการเข้ารหัส</p>
+                                    </div>
+                                </div>
+                                <div class="usage-step">
+                                    <div class="step-icon">🔑</div>
+                                    <div class="step-text">
+                                        <p>กำหนด Passphrase </p>
+                                        <p>เลือกโหมด: ECB, CBC, หรือ GCM</p>
+                                    </div>
+                                </div>
+                                <div class="usage-step">
+                                    <div class="step-icon">🔒</div>
+                                    <div class="step-text">
+                                        <p>คลิก "เข้ารหัส" (Encrypt) เพื่อได้ข้อมูลที่ถูกเข้ารหัส</p>
+                                        <p>สำหรับถอดรหัส: ใส่ Passphrase เดิมและคลิก "ถอดรหัส" (Decrypt)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="method-card">
+                            <h4>🔹 PGP/RSA</h4>
+                            <div class="usage-steps">
+                                <div class="usage-step">
+                                    <div class="step-icon">🔑</div>
+                                    <div class="step-text">
+                                        <p>ไปที่ <strong>PGP Tab</strong> สำหรับ PGP/GPG และ RSA</p>
+                                        <p>สร้างคู่กุญแจ (Key Pair) หากยังไม่มี</p>
+                                    </div>
+                                </div>
+                                <div class="usage-step">
+                                    <div class="step-icon">🔐</div>
+                                    <div class="step-text">
+                                        <p><strong>เข้ารหัส:</strong> ใช้กุญแจสาธารณะ (Public Key) ของผู้รับ</p>
+                                        <p><strong>ถอดรหัส:</strong> ใช้กุญแจส่วนตัว (Private Key) ของผู้รับ</p>
+                                    </div>
+                                </div>
+                                <div class="usage-step">
+                                    <div class="step-icon">✍️</div>
+                                    <div class="step-text">
+                                        <p><strong>ลายเซ็นดิจิทัล:</strong> สร้างและตรวจสอบลายเซ็น</p>
+                                        <p>รองรับ RSA 2048 บิต</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="integration">
+                    <h3>🔄 Integration - โหมดบูรณาการ</h3>
+                    <div class="integration-info">
+                        <p class="integration-desc">
+                            แท็บนี้เหมาะสำหรับการทำงานหลายขั้นตอนต่อเนื่อง เช่น เข้ารหัสข้อมูลก่อน → ซ่อนในภาพ → ซ่อนผลลัพธ์ในไฟล์เสียง
+                        </p>
+                        
+                        <div class="usage-steps">
+                            <div class="usage-step">
+                                <div class="step-icon">🎯</div>
+                                <div class="step-text">
+                                    <h4>ออกแบบ Workflow</h4>
+                                    <p>"ลาก-วาง" ลำดับขั้นตอนการทำงานที่ต้องการ</p>
+                                    <p>ตัวอย่าง: เข้ารหัส AES → ซ่อนในภาพ → ซ่อนในเสียง</p>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-step">
+                                <div class="step-icon">⚙️</div>
+                                <div class="step-text">
+                                    <h4>กำหนดค่าแต่ละขั้นตอน</h4>
+                                    <p>ตั้งค่าไฟล์นำเข้า, ข้อความ, คีย์, วลีผ่าน สำหรับแต่ละขั้นตอน</p>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-step">
+                                <div class="step-icon">▶️</div>
+                                <div class="step-text">
+                                    <h4>เริ่มทำงาน</h4>
+                                    <p>คลิกปุ่ม "เริ่มทำงาน" (Execute Workflow)</p>
+                                    <p>โปรแกรมจะดำเนินการตามลำดับที่กำหนดและให้ผลลัพธ์สุดท้าย</p>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-step">
+                                <div class="step-icon">📊</div>
+                                <div class="step-text">
+                                    <h4>ติดตามความคืบหน้า</h4>
+                                    <p>ดู Progress Bar และการแจ้งเตือนระหว่างการทำงาน</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">📸 ภาพหน้าจอโปรแกรม</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="photo/pic01.png" alt="หน้าจอหลัก" class="screenshot-img">
+                    <h3>หน้าจอหลัก</h3>
+                    <p>อินเตอร์เฟสหลักของโปรแกรม SIENG</p>
+                </div>
+                
+                <div class="screenshot-card">
+                    <img src="photo/pic02.png" alt="ซ่อนข้อมูล" class="screenshot-img">
+                    <h3>ซ่อนข้อมูล</h3>
+                    <p>หน้าจอสำหรับซ่อนข้อมูลในไฟล์สื่อ</p>
+                </div>
+                
+                <div class="screenshot-card">
+                    <img src="photo/pic03.png" alt="เข้ารหัส" class="screenshot-img">
+                    <h3>เข้ารหัสข้อมูล</h3>
+                    <p>หน้าจอสำหรับเข้ารหัสข้อมูลด้วย AES-256</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="photo/pic04.png" alt="การจัดการไฟล์" class="screenshot-img">
+                    <h3>การจัดการไฟล์</h3>
+                    <p>หน้าจอสำหรับจัดการไฟล์และข้อมูล</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="photo/pic05.png" alt="การตั้งค่า" class="screenshot-img">
+                    <h3>การตั้งค่า</h3>
+                    <p>หน้าจอสำหรับปรับแต่งการตั้งค่าโปรแกรม</p>
+                </div> 
+
+                <div class="screenshot-card">
+                    <img src="photo/pic06.png" alt="การซ่อนข้อมูลขั้นสูง" class="screenshot-img">
+                    <h3>การซ่อนข้อมูลขั้นสูง</h3>
+                    <p>หน้าจอสำหรับการซ่อนข้อมูลด้วยเทคนิคขั้นสูง</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="photo/pic07.png" alt="การจัดการคีย์" class="screenshot-img">
+                    <h3>การจัดการคีย์</h3>
+                    <p>หน้าจอสำหรับจัดการคีย์และรหัสผ่าน</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="photo/pic08.png" alt="Integration Tab" class="screenshot-img">
+                    <h3>Integration Tab</h3>
+                    <p>หน้าจอสำหรับการทำงานแบบบูรณาการ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="lightboxCaption"></div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <!-- Changelog Section -->
+    <section id="changelog" class="changelog">
+        <div class="container">
+            <h2 class="section-title">🆕 ประวัติการอัปเดต</h2>
+            <div class="changelog-list">
+                <div class="changelog-item">
+                    <div class="version-badge">v1.0.3</div>
+                    <div class="changelog-content">
+                        <h3>อัปเดตล่าสุด</h3>
+                        <ul>
+                            <li>แก้ไขบั๊กการเปิดไฟล์ขนาดใหญ่ช้า</li>
+                            <li>เพิ่มการรองรับไฟล์ FLAC</li>
+                            <li>ปรับปรุง UI ให้ใช้งานง่ายขึ้น</li>
+                        </ul>
+                        <span class="date">25 มกราคม 2025</span>
+                    </div>
+                </div>
+                
+                <div class="changelog-item">
+                    <div class="version-badge">v1.0.2</div>
+                    <div class="changelog-content">
+                        <h3>ฟีเจอร์ใหม่</h3>
+                        <ul>
+                            <li>เพิ่มฟีเจอร์ Export ข้อมูลที่ซ่อน</li>
+                            <li>รองรับการเข้ารหัส PGP/GPG</li>
+                            <li>เพิ่ม Integration Tab</li>
+                        </ul>
+                        <span class="date">15 มกราคม 2025</span>
+                    </div>
+                </div>
+                
+                <div class="changelog-item">
+                    <div class="version-badge">v1.0.1</div>
+                    <div class="changelog-content">
+                        <h3>เวอร์ชันแรก</h3>
+                        <ul>
+                            <li>ฟีเจอร์ Steganography พื้นฐาน</li>
+                            <li>การเข้ารหัส AES-256</li>
+                            <li>รองรับไฟล์ภาพและเสียง</li>
+                        </ul>
+                        <span class="date">1 มกราคม 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">💬 คำถามที่พบบ่อย</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>โปรแกรมรองรับไฟล์ประเภทไหนบ้าง?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>ภาพ:</strong> PNG, JPEG, BMP, GIF, TIFF<br>
+                        <strong>เสียง:</strong> WAV, MP3, FLAC<br>
+                        <strong>วิดีโอ:</strong> MP4, AVI, MKV, MOV</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Integration Tab คืออะไร?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>เป็นโหมดสำหรับจัดลำดับขั้นตอนการทำงานหลายขั้นตอน เช่น เข้ารหัสก่อน แล้วซ่อนในภาพ แล้วซ่อนซ้ำในเสียง ทำให้สามารถสร้าง Workflow ที่ซับซ้อนได้</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>เทคนิคการซ่อนข้อมูลมีอะไรบ้าง?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>โปรแกรมรองรับเทคนิค LSB (Least Significant Bit), DWT (Discrete Wavelet Transform), Frame-based สำหรับวิดีโอ และการซ่อนใน Metadata</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>แตกไฟล์ ZIP ไม่ได้ ทำยังไง?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ลองใช้โปรแกรมแตกไฟล์อื่น เช่น 7-Zip หรือ WinRAR หรือตรวจสอบว่าไฟล์ดาวน์โหลดสมบูรณ์หรือไม่</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ต้องติดตั้งอะไรเพิ่มเติมไหม?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ไม่ต้องติดตั้งอะไรเพิ่ม โปรแกรมเป็น Portable Application สามารถใช้งานได้ทันที</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>รองรับระบบปฏิบัติการอะไรบ้าง?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>รองรับ Windows 10/11 และ Linux (Ubuntu, Debian, CentOS)</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ข้อมูลที่ซ่อนปลอดภัยแค่ไหน?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ใช้การเข้ารหัส AES-256 ซึ่งเป็นมาตรฐานความปลอดภัยระดับทหาร และเทคนิค Steganography ที่ตรวจจับได้ยาก</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Developer Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">🧑‍💻 พัฒนาโดย</h2>
+            <div class="about-content">
+                <div class="developer-team">
+                    <div class="developer">
+                        <h3>นาย วัชรพงษ์ รัตน์ธรรม</h3>
+                    </div>
+                    <div class="developer">
+                        <h3>นาย ธวรรษ ภมร</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="icon.png" alt="Security Icon" width="60" height="30">
+                    <span>เซี้ยง</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">หน้าแรก</a>
+                    <a href="#features">ฟีเจอร์</a>
+                    <a href="#guide">คู่มือ</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 SIENG Project. สงวนลิขสิทธิ์.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="lightbox.js"></script>
+</body>
+</html>
