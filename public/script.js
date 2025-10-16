@@ -82,7 +82,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Download button functionality
 const downloadBtn = document.getElementById("downloadBtn")
     downloadBtn.addEventListener("click", () => {
-    const downloadUrl = "https://github.com/Miki5535/SIENG_Code/archive/refs/heads/main.zip";
+    const downloadUrl = "https://github.com/Miki5535/SIENG_Download_For_Web/archive/refs/heads/main.zip";
+    // const downloadUrl = "https://github.com/Miki5535/SIENG_Code/archive/refs/heads/main.zip";
 
     const link = document.createElement("a");
     link.href = downloadUrl;
